@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap');
+
+        :root {
+            --primary-color: #ff4b5c;
+            --secondary-color: #ff6b6b;
+            --background-color: #f0f0f0;
+            --text-color: #333;
+            --white: #ffffff;
+            --box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
+            --green-color: #2ecc71; /* Green color */
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        body {
+            background: #f0f0f0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            padding: 20px;
+            box-sizing: border-box;
+        }
+
+        .menu {
+            background-color: var(--white);
+            border-radius: 1rem;
+            box-shadow: var(--box-shadow);
+            text-align: center;
+            padding: 2rem;
+            width: 500px; /* Increase the width as needed */
+	    height:500px;
+            position: relative; /* Set position to relative */
+        }
+
+        .last-login {
+            color: var(--text-color);
+            font-size: 13px;
+            position: absolute; /* Set position to absolute */
+            top: 10px;
+            right: 10px;
+        }
+
+        .menu-items {
+            margin-top: 20px;
+            list-style: none;
+        }
+
+        .menu-item {
+            margin-bottom: 23px;
+        }
+
+        .menu-link {
+            display: block;
+            background-color: var(--primary-color);
+            color: var(--white);
+            padding: 10px;
+            border-radius: 0.5rem;
+            text-decoration: none;
+            transition: background-color 0.3s ease;
+        }
+
+        .menu-link:hover {
+            background-color: var(--secondary-color);
+        }
+		.fName {
+		            color:#22c935; /* Green color */
+		            font-weight: bold;
+		            font-size: 1.2rem;
+		        }
+		.loginTime {
+			        color:#22c935; /* Green color */
+				    font-weight: bold;
+					font-size: 13px;
+				}
+    </style>
+</head>
+<body>
+    <div class="menu">
+        <span class="last-login">Last Login: <span class="loginTime" th:text="${oldTime}"></span></span>
+        <ul class="menu-items">
+			
+            <li class="menu-item">Welcome back, <span class="fName" th:text="${userFname}"></span> to your dashboard</li>
+       
+            <li class="menu-item"><a href="/showBalance" class="menu-link">Show Balance</a></li>
+            <li class="menu-item"><a href="/deposit" class="menu-link">Deposit</a></li>
+            <li class="menu-item"><a href="/withdraw" class="menu-link">Withdraw</a></li>
+            <li class="menu-item"><a href="/transfer" class="menu-link">Transfer</a></li>
+            <li class="menu-item"><a href="/transaction" class="menu-link">View Transaction History</a></li>
+	        <li class="menu-item"><a href="/logout" class="menu-link">Logout</a></li>
+        </ul>
+    </div>
+</body>
+</html>

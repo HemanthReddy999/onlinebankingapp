@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Transaction History</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        h1 {
+            color: #ff4b5c;
+            text-align: center;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+        th, td {
+            padding: 10px;
+            border-bottom: 1px solid #ddd;
+            text-align: left;
+        }
+        th {
+            background-color: #f2f2f2;
+	    color: #ff4b5c;
+        }
+        tr:hover {
+            background-color: #f9f9f9;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Transaction History</h1>
+        <table>
+            <thead>
+                <tr>
+                    <th>Sender</th>
+                    <th>Recipient</th>
+                    <th>Amount</th>
+                    <th>Date</th>
+                    <th>Type</th>
+                    <!-- Add more table headings for other transaction details if needed -->
+                </tr>
+            </thead>
+            <tbody>
+                    <tr th:each="transaction : ${transactions}">
+						<td th:text="${transaction.sentBy}"></td>
+						<td th:text="${transaction.receivedBy}"></td>
+						<td th:text="${transaction.amount}"></td>
+						<td th:text="${transaction.onDate}"></td>
+						<td th:text="${transaction.transactionType}"></td>
+                    </tr>
+                
+            </tbody>
+        </table>
+    </div>
+</body>
+</html>

@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Deposit Confirmation</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap');
+
+        :root {
+            --primary-color: #ff4b5c;
+            --secondary-color: #ff6b6b;
+            --background-color: #f0f0f0;
+            --text-color: #333;
+            --white: #ffffff;
+            --box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        body {
+            background-color: var(--background-color);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .container {
+            background-color: var(--white);
+            padding: 2rem;
+            border-radius: 1rem;
+            box-shadow: var(--box-shadow);
+            text-align: center;
+        }
+
+        .container h1 {
+            color: var(--primary-color);
+            font-size: 3rem; /* Increased font size */
+            margin-bottom: 1rem;
+        }
+
+        .container p {
+            color: var(--text-color);
+            font-size: 1.5rem; /* Increased font size */
+            margin-bottom: 2rem;
+        }
+
+        .container button {
+            background-color: var(--primary-color);
+            color: var(--white);
+            border: none;
+            padding: 0.75rem 1.5rem;
+            border-radius: 0.5rem;
+            cursor: pointer;
+            font-size: 1rem;
+            transition: background-color 0.3s ease;
+        }
+
+        .container button:hover {
+            background-color: var(--secondary-color);
+        }
+.balance {
+            color:#2ecc71; /* Green color */
+            font-weight: bold;
+            font-size: 1.8rem;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Transfer Confirmation</h1>
+        <p>You have successfully transfered <span class="balance" th:text="'Rs. ' + ${amount} + '/-'"></span> to <span class="balance" th:text=${receiver}></span>.</p>
+        <button onclick="history.back()">Back</button>
+    </div>
+</body>
+</html>
